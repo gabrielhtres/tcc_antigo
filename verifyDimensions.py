@@ -1,4 +1,5 @@
-from skimage import io
+from skimage import io, color
+from skimage.transform import resize
 import matplotlib.pyplot as plt
 import time
 
@@ -6,6 +7,59 @@ cornHealth = 1162
 cornGraySpot = 574
 cornCommonRust = 1306
 cornBlight = 1145
+
+def resizeImages():
+    # Corn Health
+    # for i in range(1, cornHealth + 1):
+    #     img = io.imread('data/Health/Corn_Health (' + str(i) + ').jpg')
+    #     if img.shape[2] == 4:
+    #         img = color.rgba2rgb(img)
+        
+    #     if img.shape[0] > 256 and img.shape[1] > 256:
+    #         resized_img = resize(img, (256, 256), anti_aliasing=True)
+    #         io.imsave('adjustedData/Health/Corn_Health' + str(i) + ').jpg', resized_img)
+
+    #     if img.shape[0] == 256 and img.shape[1] == 256:
+    #          io.imsave('adjustedData/Health/Corn_Health (' + str(i) + ').jpg', img)
+    
+    # Corn Gray Spot
+    for i in range(1, cornGraySpot + 1):
+        img = io.imread('data/Gray_Leaf_Spot/Corn_Gray_Spot (' + str(i) + ').jpg')
+        if img.shape[2] == 4:
+            img = color.rgba2rgb(img)
+        
+        if img.shape[0] > 256 and img.shape[1] > 256:
+            resized_img = resize(img, (256, 256), anti_aliasing=True)
+            io.imsave('adjustedData/Gray_Leaf_Spot/Corn_Gray_Spot (' + str(i) + ').jpg', resized_img)
+
+        if img.shape[0] == 256 and img.shape[1] == 256:
+             io.imsave('adjustedData/Gray_Leaf_Spot/Corn_Gray_Spot (' + str(i) + ').jpg', img)
+    
+    # Corn Common Rust
+    # for i in range(1, cornCommonRust + 1):
+    #     img = io.imread('data/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg')
+    #     if img.shape[2] == 4:
+    #         img = color.rgba2rgb(img)
+        
+    #     if img.shape[0] > 256 and img.shape[1] > 256:
+    #         resized_img = resize(img, (256, 256), anti_aliasing=True)
+    #         io.imsave('adjustedData/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg', resized_img)
+
+    #     if img.shape[0] == 256 and img.shape[1] == 256:
+    #          io.imsave('adjustedData/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg', img)
+
+    # Corn Blight
+    # for i in range(1, cornBlight + 1):
+    #     img = io.imread('data/Blight/Corn_Blight (' + str(i) + ').jpg')
+    #     if img.shape[2] == 4:
+    #         img = color.rgba2rgb(img)
+        
+    #     if img.shape[0] > 256 and img.shape[1] > 256:
+    #         resized_img = resize(img, (256, 256), anti_aliasing=True)
+    #         io.imsave('adjustedData/Blight/Corn_Blight (' + str(i) + ').jpg', resized_img)
+
+    #     if img.shape[0] == 256 and img.shape[1] == 256:
+    #          io.imsave('adjustedData/Blight/Corn_Blight (' + str(i) + ').jpg', img)
 
 def countImageMinusThen(type, tam, height, width):
     total = 0
@@ -50,16 +104,19 @@ def verifyMinAndMaxDimensions(type, tam):
 def showImages(type, tam):
     for i in range(1, tam):
         img = io.imread('data/' + type + '/' + 'Corn_' + type + ' (' + str(i) + ').jpg')
+        io.imsave()
         plt.imshow(img)
         plt.pause(5)
 
 # verifyMinAndMaxDimensions('Common_Rust', 1306)
 # countImageMinusThen('Common_Rust', 1306, 256, 256)
-showImages('Common_Rust', 1306)
+# showImages('Common_Rust', 1306)
 # plt.ion()
 
-img = io.imread('data/Common_Rust/Corn_Common_Rust (1).jpg')
+# img = io.imread('data/Common_Rust/Corn_Common_Rust (1).jpg')
 # plt.imshow(img)
 # plt.pause(5)
 # time.sleep(10)
 # plt.close('all')
+
+resizeImages()
