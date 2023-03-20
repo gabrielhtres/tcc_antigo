@@ -8,6 +8,9 @@ cornGraySpot = 574
 cornCommonRust = 1306
 cornBlight = 1145
 
+def trainModelTest():
+    print('Função de criação do modelo')
+
 def resizeImages():
     # Corn Health
     for i in range(1, cornHealth + 1):
