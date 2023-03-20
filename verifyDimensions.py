@@ -11,6 +11,17 @@ cornBlight = 1145
 def trainModelTest():
     print('Função de criação do modelo')
 
+#     from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+# # definir o caminho para o diretório de imagens
+# path = '/caminho/para/a/pasta/de/imagens/'
+
+# # instanciar um objeto ImageDataGenerator para pré-processamento de dados
+# datagen = ImageDataGenerator(rescale=1./255)
+
+# # carregar as imagens do diretório com o método flow_from_directory
+# dataset = datagen.flow_from_directory(path, batch_size=32, target_size=(224, 224), class_mode='categorical')
+
 def resizeImages():
     # Corn Health
     for i in range(1, cornHealth + 1):
