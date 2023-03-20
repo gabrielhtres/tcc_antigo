@@ -102,11 +102,13 @@ def verifyMinAndMaxDimensions(type, tam):
     print('Largura maxima: ' + str(wMax))
 
 def showImages(type, tam):
-    for i in range(1, tam):
-        img = io.imread('data/' + type + '/' + 'Corn_' + type + ' (' + str(i) + ').jpg')
-        io.imsave()
-        plt.imshow(img)
-        plt.pause(5)
+    for i in range(2, tam):
+        try:
+            img = io.imread('adjustedData/' + type + '/' + 'Corn_' + type + ' (' + str(i) + ').jpg')
+            plt.imshow(img)
+            plt.pause(1)
+        except:
+            print('Imagem ' + str(i) + ' não encontrada')
 
 # verifyMinAndMaxDimensions('Common_Rust', 1306)
 # countImageMinusThen('Common_Rust', 1306, 256, 256)
@@ -119,4 +121,5 @@ def showImages(type, tam):
 # time.sleep(10)
 # plt.close('all')
 
-resizeImages()
+# resizeImages()
+showImages('Common_Rust', cornCommonRust)
