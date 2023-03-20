@@ -10,17 +10,17 @@ cornBlight = 1145
 
 def resizeImages():
     # Corn Health
-    # for i in range(1, cornHealth + 1):
-    #     img = io.imread('data/Health/Corn_Health (' + str(i) + ').jpg')
-    #     if img.shape[2] == 4:
-    #         img = color.rgba2rgb(img)
+    for i in range(1, cornHealth + 1):
+        img = io.imread('data/Health/Corn_Health (' + str(i) + ').jpg')
+        if img.shape[2] == 4:
+            img = color.rgba2rgb(img)
         
-    #     if img.shape[0] > 256 and img.shape[1] > 256:
-    #         resized_img = resize(img, (256, 256), anti_aliasing=True)
-    #         io.imsave('adjustedData/Health/Corn_Health' + str(i) + ').jpg', resized_img)
+        if img.shape[0] > 256 and img.shape[1] > 256:
+            resized_img = resize(img, (256, 256), anti_aliasing=True)
+            io.imsave('adjustedData/Health/Corn_Health' + str(i) + ').jpg', resized_img)
 
-    #     if img.shape[0] == 256 and img.shape[1] == 256:
-    #          io.imsave('adjustedData/Health/Corn_Health (' + str(i) + ').jpg', img)
+        if img.shape[0] == 256 and img.shape[1] == 256:
+             io.imsave('adjustedData/Health/Corn_Health (' + str(i) + ').jpg', img)
     
     # Corn Gray Spot
     for i in range(1, cornGraySpot + 1):
@@ -36,30 +36,30 @@ def resizeImages():
              io.imsave('adjustedData/Gray_Leaf_Spot/Corn_Gray_Spot (' + str(i) + ').jpg', img)
     
     # Corn Common Rust
-    # for i in range(1, cornCommonRust + 1):
-    #     img = io.imread('data/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg')
-    #     if img.shape[2] == 4:
-    #         img = color.rgba2rgb(img)
+    for i in range(1, cornCommonRust + 1):
+        img = io.imread('data/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg')
+        if img.shape[2] == 4:
+            img = color.rgba2rgb(img)
         
-    #     if img.shape[0] > 256 and img.shape[1] > 256:
-    #         resized_img = resize(img, (256, 256), anti_aliasing=True)
-    #         io.imsave('adjustedData/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg', resized_img)
+        if img.shape[0] > 256 and img.shape[1] > 256:
+            resized_img = resize(img, (256, 256), anti_aliasing=True)
+            io.imsave('adjustedData/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg', resized_img)
 
-    #     if img.shape[0] == 256 and img.shape[1] == 256:
-    #          io.imsave('adjustedData/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg', img)
+        if img.shape[0] == 256 and img.shape[1] == 256:
+             io.imsave('adjustedData/Common_Rust/Corn_Common_Rust (' + str(i) + ').jpg', img)
 
     # Corn Blight
-    # for i in range(1, cornBlight + 1):
-    #     img = io.imread('data/Blight/Corn_Blight (' + str(i) + ').jpg')
-    #     if img.shape[2] == 4:
-    #         img = color.rgba2rgb(img)
+    for i in range(1, cornBlight + 1):
+        img = io.imread('data/Blight/Corn_Blight (' + str(i) + ').jpg')
+        if img.shape[2] == 4:
+            img = color.rgba2rgb(img)
         
-    #     if img.shape[0] > 256 and img.shape[1] > 256:
-    #         resized_img = resize(img, (256, 256), anti_aliasing=True)
-    #         io.imsave('adjustedData/Blight/Corn_Blight (' + str(i) + ').jpg', resized_img)
+        if img.shape[0] > 256 and img.shape[1] > 256:
+            resized_img = resize(img, (256, 256), anti_aliasing=True)
+            io.imsave('adjustedData/Blight/Corn_Blight (' + str(i) + ').jpg', resized_img)
 
-    #     if img.shape[0] == 256 and img.shape[1] == 256:
-    #          io.imsave('adjustedData/Blight/Corn_Blight (' + str(i) + ').jpg', img)
+        if img.shape[0] == 256 and img.shape[1] == 256:
+             io.imsave('adjustedData/Blight/Corn_Blight (' + str(i) + ').jpg', img)
 
 def countImageMinusThen(type, tam, height, width):
     total = 0
